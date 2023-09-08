@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import './App.css';
 import Searchbox from '../components/searchbox-components/Searchbox.jsx'
 import Cardlist from '../components/cardlist-component/Cardlist.jsx'
@@ -18,7 +18,7 @@ const App = () => {
     },
     []);
   
-  useEffect(
+  useMemo(
     () => {
       const filteredUserList = userState.filter((user) =>
        {return user.name.toLowerCase().includes(searchField)})
